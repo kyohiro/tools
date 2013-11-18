@@ -1,5 +1,3 @@
-import scala.collection.mutable.ArrayBuffer
-
 object Permutation {
   
   //Back tracking permutation
