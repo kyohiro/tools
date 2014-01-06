@@ -1,8 +1,10 @@
 package source
 
 import scala.collection.mutable
+import scala.collection.JavaConverters._
 import org.springframework.beans.BeanWrapper
 import org.springframework.beans.BeanWrapperImpl
+import java.util.concurrent.ConcurrentHashMap
 
 case class ReflectItem(item: Any) {
   val wrapped = new BeanWrapperImpl(item) 
@@ -58,7 +60,7 @@ trait DBSource extends SomeSource {
 
 class CachedSource extends SomeSource {
   
-  val resources = mutable.HashMap.empty[String, Resource]
+  val resources = new ConcurrentHashMap[String, Resource] asScala
   
   def read(criteria: Criteria): Option[Any] = resources.get(criteria.identifier) match {
     case Some(res) => res.read(criteria)
