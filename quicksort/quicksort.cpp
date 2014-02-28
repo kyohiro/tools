@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 
+
 void quicksort(int array[], int low, int high) {
 	int left = low, right = high, mid = array[(low + high) >> 1];
 	while (left < right) {
