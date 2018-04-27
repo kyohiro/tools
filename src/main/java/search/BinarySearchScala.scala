@@ -1,6 +1,8 @@
+package search
+
 import scala.annotation.tailrec
 
-object BinarySearch {
+object BinarySearchScala {
   /**
    * Academic implementation as in Java or C.
    * If the value exists in the array, return value would be Some(index), else wise None would be returned.

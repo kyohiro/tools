@@ -1,3 +1,5 @@
+package permutation
+
 object Permutation {
   
   //Back tracking permutation
